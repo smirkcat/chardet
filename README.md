@@ -1,3 +1,8 @@
+## 我的修改
+- 去除trans-utf32.go文件，调用原生"golang.org/x/text/encoding/unicode/utf32"
+
+
+**以下为原作者所写**
 chardet
 =======
 
@@ -13,9 +18,9 @@ detect text encoding, like python chardet, but for go
 不支持其他语种和编码格式的探测。
 
 本包有四个函数：
-
+```
 	// 本函数返回文本最可能的编码格式
-    func Mostlike([]byte) string
+	func Mostlike([]byte) string
 	
 	// 本函数返回文本所有可能的编码格式，可能性越高越靠前
 	func Possible([]byte) []string
@@ -25,7 +30,7 @@ detect text encoding, like python chardet, but for go
 	
 	// 用于将文本编码后写入w
 	func NeWriter(w io.Writer, codec string, bom bool) (io.Writer, error)
-
+```
 Mostlike函数如果无法探测到编码格式，会返回空字符串。
 如果发现该文本符合多个编码格式，会优先返回utf-8格式；
 否则会进一步检测字符分布，返回最匹配的。
