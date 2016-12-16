@@ -1,20 +1,21 @@
 ## 我的修改
 - 去除trans-utf32.go文件，调用原生"golang.org/x/text/encoding/unicode/utf32"
+- 增加chardethtml.go文件，为了识别html中conten-types没有charset数据时识别最可能的编码格式
 
 
-**以下为原作者所写**
-chardet
+**以下为原作者所写，我适当修改了不合适的说明**
+[chardet][1]
 =======
 
-detect text encoding, like python chardet, but for go
+detect text encoding for golang
 
 本包用于探测文本的编码格式。
 
 支持探测的格式有：
-5种unicode格式：UTF8、大小端UTF16，大小端UTF32；
-4种中文格式：hz-gb2312、gbk、gb18030、big5；
-3种日文格式euc-jp、shift-jis、iso-2022-jp；
-1种日文格式euc-kr；
+- 5种unicode格式：UTF8、大小端UTF16，大小端UTF32；
+- 4种中文格式：hz-gb2312、gbk、gb18030、big5；
+- 3种日文格式euc-jp、shift-jis、iso-2022-jp；
+- 1种韩文格式euc-kr；
 不支持其他语种和编码格式的探测。
 
 本包有四个函数：
@@ -53,3 +54,5 @@ Possible函数会返回全部可能的编码格式，utf-8格式优先于其他u
 * **Euc-Jp** "euc-jp"
 * **Shift-Jis** "shift-jis"
 * **ISO-2022-JP** "iso-2022-jp"
+
+[1]: https://github.com/hydra13142/chardet
